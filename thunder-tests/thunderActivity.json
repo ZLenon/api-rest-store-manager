@@ -48,5 +48,35 @@
     ],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "ca7d8a0b-89e9-4442-b494-ed3f095e307e",
+    "colId": "history",
+    "containerId": "",
+    "name": "products Cadastro",
+    "url": "localhost:3001/products",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-04-26T18:21:41.251Z",
+    "modified": "2023-04-26T19:35:55.362Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"Excalibur\"\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]

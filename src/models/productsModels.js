@@ -14,7 +14,17 @@ const findByIDModel = async (id) => {
   return product;
 };
 
+const createProductModel = async (newProduct) => {
+  // insere um novo registro na tabela "products" da base de dados "StoreManager" 
+  // com o valor da coluna "name" especificado na cláusula VALUES
+  const SQL = 'INSERT INTO StoreManager.products (name) VALUES (?)';
+  const [{ insertId }] = await connection.execute(SQL, [newProduct]);
+  // insertId retorna o ID seguinte ao utimo da lista
+  return insertId;
+};
+
 module.exports = {
   findAllModel,
   findByIDModel,
+  createProductModel,
 };

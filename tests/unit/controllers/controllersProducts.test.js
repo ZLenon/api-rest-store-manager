@@ -53,5 +53,15 @@ describe('CONTROLLERS', function () {
 
     expect(response.status).to.have.been.calledWith(404);
     expect(response.json).to.have.been.calledWithExactly({ message: 'Product not found' });
-   });
+  });
+    it('Testando função createProductControler', async function () {
+    // const { name } = request.body;    
+    request.body = { "name": "Excalibur" };
+    sinon.stub(productServices, 'createProductService').resolves(mock.newIten);
+    
+    const a = await productController.createProductControler(request, response);
+
+    expect(response.status).to.have.been.calledWith(201);
+    expect(response.json).to.have.been.calledWithExactly(mock.newIten);
+  });
 });

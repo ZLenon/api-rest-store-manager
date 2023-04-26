@@ -30,4 +30,14 @@ describe('SERVIÇES', function () {
     expect(findOBJ).to.equal(mock.oneIten);
   });
   // -------------------------------------------------------------
+    it('Testando função createProductService', async function () {
+    sinon.stub(modelsProduct, 'createProductModel').resolves(4); 
+    sinon.stub(modelsProduct, 'findByIDModel').resolves(mock.newIten); 
+
+
+    const reqBody = {"name": "Excalibur"};
+    const newProduct = await productServices.createProductService(reqBody);
+
+    expect(newProduct).to.equal(mock.newIten);
+  });
 });

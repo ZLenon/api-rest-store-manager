@@ -36,4 +36,13 @@ describe('MODELS', function () {
 
     });
   // -------------------------------------------------------------  
+    it('Testando função createProductModel', async function () {
+    sinon.stub(connection, 'execute').resolves([{insertId: mock.newIten}]);  
+
+    const reqBody = { "name": "Excalibur" };
+    const insertId = await modelsProduct.createProductModel(reqBody);
+
+    expect(insertId).to.equal(mock.newIten);
+
+  });
 });

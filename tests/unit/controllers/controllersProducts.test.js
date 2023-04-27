@@ -5,8 +5,8 @@ const sinonChai = require('sinon-chai');
 const { expect } = chai;
 chai.use(sinonChai);
 
-const productController = require('../../../src/controllers');
-const productServices = require('../../../src/services');
+const controllers = require('../../../src/controllers');
+const services = require('../../../src/services');
 
 
 const mock = require('../mock');
@@ -25,9 +25,9 @@ describe('CONTROLLERS', function () {
   });
   // -------------------------------------------------------------
   it('Testando função findAllControler', async function () {
-    sinon.stub(productServices, 'findAllService').resolves(mock.AllItens); 
+    sinon.stub(services, 'findAllService').resolves(mock.AllItens); 
     
-    await productController.findAllControler(request, response);
+    await controllers.findAllControler(request, response);
 
     expect(response.status).to.have.been.calledWith(200);
     expect(response.json).to.have.been.calledWithExactly(mock.AllItens);
@@ -36,9 +36,9 @@ describe('CONTROLLERS', function () {
   it('Testando função findByIDControler', async function () {
     // const { id } = request.params;
     request.params = { id: 2 };
-    sinon.stub(productServices, 'findByIDService').resolves(mock.oneIten); 
+    sinon.stub(services, 'findByIDService').resolves(mock.oneIten); 
     
-    await productController.findByIDControler(request, response);
+    await controllers.findByIDControler(request, response);
 
     expect(response.status).to.have.been.calledWith(200);
     expect(response.json).to.have.been.calledWithExactly(mock.oneIten);
@@ -47,9 +47,9 @@ describe('CONTROLLERS', function () {
   it('Testando função findByIDControler Fail Response', async function () {
     // const { id } = request.params;
     request.params = { id: 2 };
-    sinon.stub(productServices, 'findByIDService').resolves(false); 
+    sinon.stub(services, 'findByIDService').resolves(false); 
     
-    await productController.findByIDControler(request, response);
+    await controllers.findByIDControler(request, response);
 
     expect(response.status).to.have.been.calledWith(404);
     expect(response.json).to.have.been.calledWithExactly({ message: 'Product not found' });
@@ -57,9 +57,9 @@ describe('CONTROLLERS', function () {
     it('Testando função createProductControler', async function () {
     // const { name } = request.body;    
     request.body = { "name": "Excalibur" };
-    sinon.stub(productServices, 'createProductService').resolves(mock.newIten);
+    sinon.stub(services, 'createProductService').resolves(mock.newIten);
     
-    const a = await productController.createProductControler(request, response);
+    const a = await controllers.createProductControler(request, response);
 
     expect(response.status).to.have.been.calledWith(201);
     expect(response.json).to.have.been.calledWithExactly(mock.newIten);

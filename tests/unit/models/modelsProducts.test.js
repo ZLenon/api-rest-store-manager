@@ -4,7 +4,7 @@ const { expect } = chai;
 // o método stub do sinon e indicar para o connection do mysql o que o 
 // seu método execute deve retornar em caso de sucesso
 
-const modelsProduct = require('../../../src/models');
+const models = require('../../../src/models');
 const connection = require('../../../src/models/connection');
 
 const mock = require('../mock');
@@ -21,7 +21,7 @@ describe('MODELS', function () {
     // resoves assincrona -- returns sincrona
     sinon.stub(connection, 'execute').resolves([mock.AllItens]); 
     
-    const productsArray = await modelsProduct.findAllModel();
+    const productsArray = await models.findAllModel();
 
     expect(productsArray).to.equal(mock.AllItens);
   });
@@ -30,7 +30,7 @@ describe('MODELS', function () {
     sinon.stub(connection, 'execute').resolves([[mock.oneIten]]);  
 
     const TWO = 2
-    const productOBJ = await modelsProduct.findByIDModel(TWO);
+    const productOBJ = await models.findByIDModel(TWO);
 
     expect(productOBJ).to.equal(mock.oneIten);
 
@@ -40,7 +40,7 @@ describe('MODELS', function () {
     sinon.stub(connection, 'execute').resolves([{insertId: mock.newIten}]);  
 
     const reqBody = { "name": "Excalibur" };
-    const insertId = await modelsProduct.createProductModel(reqBody);
+    const insertId = await models.createProductModel(reqBody);
 
     expect(insertId).to.equal(mock.newIten);
 

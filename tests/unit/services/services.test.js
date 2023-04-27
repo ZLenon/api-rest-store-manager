@@ -39,5 +39,23 @@ describe('SERVIÇES', function () {
     const newProduct = await services.createProductService(reqBody);
 
     expect(newProduct).to.equal(mock.newIten);
+    });
+  // -------------------------------------------------------------
+  it('Testando função createSaleService', async function () {
+    const products = mock.twoIten; 
+    sinon.stub(models, 'findByIDModel').resolves([products]);
+    sinon.stub(models, 'createSaleModel').resolves(10);
+    sinon.stub(models, 'insertSaleModel').resolves(1, 2, 5);
+        
+    const newProduct = await services.createSaleService(mock.reqBody);
+    
+    expect(newProduct).to.deep.equal(mock.reqBodyResolves);
+  });
+  it('Testando função createSaleService FAIL Response', async function () {
+    sinon.stub(models, 'findByIDModel').resolves(undefined);
+
+    const newProduct = await services.createSaleService(mock.reqBody);
+
+    expect(newProduct).to.deep.equal({ status: 404, message: 'Product not found' });
   });
 });

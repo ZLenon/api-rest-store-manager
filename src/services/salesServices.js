@@ -6,9 +6,8 @@ const createSaleService = async (productSales) => {
     productSales.map((produtos) =>
       models.findByIDModel(produtos.productId)),
   );
-  
   const verifyProducts = products.some((produto) => produto === undefined);
-
+  
   if (verifyProducts) {   
     return { status: 404, message: 'Product not found' };
   }

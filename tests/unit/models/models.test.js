@@ -44,5 +44,22 @@ describe('MODELS', function () {
 
     expect(insertId).to.equal(mock.newIten);
 
+    });
+  // -------------------------------------------------------------  
+  it('Testando função createSaleModel', async function () {
+    const insertIdMock = mock.requestModel;
+    sinon.stub(connection, 'execute').resolves(insertIdMock);  
+
+    const insertId  = await models.createSaleModel();
+
+    expect(insertId).to.be.equal(5);
+  });
+  // -------------------------------------------------------------  
+   it('Testando função insertSaleModel', async function () {
+    const insertIdMock = mock.requestModel;
+    sinon.stub(connection, 'execute').resolves(insertIdMock);  
+
+    await models.insertSaleModel(8, 2, 5);  
+
   });
 });

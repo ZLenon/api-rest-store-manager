@@ -44,7 +44,7 @@ describe('CONTROLLERS', function () {
     expect(response.json).to.have.been.calledWithExactly(mock.oneIten);
   });
   // -------------------------------------------------------------
-  it('Testando função findByIDControler Fail Response', async function () {
+  it('Testando função findByIDControler FAIL Response', async function () {
     // const { id } = request.params;
     request.params = { id: 2 };
     sinon.stub(services, 'findByIDService').resolves(false); 
@@ -54,14 +54,36 @@ describe('CONTROLLERS', function () {
     expect(response.status).to.have.been.calledWith(404);
     expect(response.json).to.have.been.calledWithExactly({ message: 'Product not found' });
   });
-    it('Testando função createProductControler', async function () {
+  it('Testando função createProductControler', async function () {
     // const { name } = request.body;    
     request.body = { "name": "Excalibur" };
     sinon.stub(services, 'createProductService').resolves(mock.newIten);
     
-    const a = await controllers.createProductControler(request, response);
+    await controllers.createProductControler(request, response);
 
     expect(response.status).to.have.been.calledWith(201);
     expect(response.json).to.have.been.calledWithExactly(mock.newIten);
+    });
+  it('Testando função createSaleController', async function () {
+  // const allBody = request.body;
+    request.body = mock.reqBodyResolves;
+
+    sinon.stub(services, 'createSaleService').resolves(request.body);
+
+    await controllers.createSaleController(request, response);
+
+    expect(response.status).to.have.been.calledWith(201);
+    expect(response.json).to.have.been.calledWithExactly(mock.reqBodyResolves);
+  });
+  it('Testando função createSaleController FAIL Response', async function () {
+  // const allBody = request.body;
+    request.body = mock.reqBodyResolves;
+    
+    sinon.stub(services, 'createSaleService').resolves({ status: 404, message: 'Product not found' });
+
+    await controllers.createSaleController(request, response);
+
+    expect(response.status).to.have.been.calledWith(404);
+    expect(response.json).to.have.been.calledWithExactly({ message: 'Product not found' });
   });
 });

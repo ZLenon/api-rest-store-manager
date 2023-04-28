@@ -3,7 +3,7 @@
     "_id": "e90ad3ec-6412-4065-b6d1-76f628ba52b6",
     "colId": "history",
     "containerId": "",
-    "name": "products",
+    "name": "products All",
     "url": "localhost:3001/products",
     "method": "GET",
     "sortNum": 0,
@@ -139,11 +139,11 @@
     "colId": "history",
     "containerId": "",
     "name": "Sales/:ID",
-    "url": "localhost:3001/sales/3",
+    "url": "localhost:3001/sales/2",
     "method": "GET",
     "sortNum": 0,
     "created": "2023-04-26T18:21:41.251Z",
-    "modified": "2023-04-28T00:21:14.492Z",
+    "modified": "2023-04-28T00:26:18.194Z",
     "headers": [
       {
         "name": "Accept",

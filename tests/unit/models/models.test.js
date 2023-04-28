@@ -59,7 +59,26 @@ describe('MODELS', function () {
     const insertIdMock = mock.requestModel;
     sinon.stub(connection, 'execute').resolves(insertIdMock);  
 
-    await models.insertSaleModel(8, 2, 5);  
-
+    await models.insertSaleModel(8, 2, 5);     
+   });
+  // -------------------------------------------------------------  
+  it('Testando função findAllSales', async function () {
+    const allSales = mock.allSales
+    sinon.stub(connection, 'execute').resolves([allSales]);  
+    
+    const sales = await models.findAllSales();
+    
+    expect(sales).to.be.an('array');
+    expect(sales).to.be.equal(allSales);
+  });
+  // -------------------------------------------------------------  
+  it('Testando função findAllSales', async function () {
+    const oneSale = mock.oneSale;
+    sinon.stub(connection, 'execute').resolves([oneSale]);  
+    
+    const sales = await models.findIDSales(2);
+    
+    expect(sales).to.be.an('array');
+    expect(sales).to.be.equal(oneSale);
   });
 });

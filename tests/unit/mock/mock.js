@@ -67,6 +67,35 @@ const reqBodyResolves = {
   ]
 };
 
+const allSales = [
+  {
+    "saleId": 1,
+    "productId": 1,
+    "quantity": 5,
+    "date": "2023-04-28T00:23:42.000Z"
+  },
+  {
+    "saleId": 1,
+    "productId": 2,
+    "quantity": 10,
+    "date": "2023-04-28T00:23:42.000Z"
+  },
+  {
+    "saleId": 2,
+    "productId": 3,
+    "quantity": 15,
+    "date": "2023-04-28T00:23:42.000Z"
+  }
+];
+
+const oneSale = [
+  {
+    "productId": 3,
+    "quantity": 15,
+    "date": "2023-04-28T00:23:42.000Z"
+  }
+]
+
 module.exports = {
   AllItens,
   oneIten,
@@ -75,4 +104,6 @@ module.exports = {
   twoIten,
   reqBody,
   reqBodyResolves,
+  allSales,
+  oneSale,
 };

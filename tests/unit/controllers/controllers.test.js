@@ -54,6 +54,7 @@ describe('CONTROLLERS', function () {
     expect(response.status).to.have.been.calledWith(404);
     expect(response.json).to.have.been.calledWithExactly({ message: 'Product not found' });
   });
+  // -------------------------------------------------------------
   it('Testando função createProductControler', async function () {
     // const { name } = request.body;    
     request.body = { "name": "Excalibur" };
@@ -63,7 +64,8 @@ describe('CONTROLLERS', function () {
 
     expect(response.status).to.have.been.calledWith(201);
     expect(response.json).to.have.been.calledWithExactly(mock.newIten);
-    });
+  });
+  // -------------------------------------------------------------
   it('Testando função createSaleController', async function () {
   // const allBody = request.body;
     request.body = mock.reqBodyResolves;
@@ -75,6 +77,7 @@ describe('CONTROLLERS', function () {
     expect(response.status).to.have.been.calledWith(201);
     expect(response.json).to.have.been.calledWithExactly(mock.reqBodyResolves);
   });
+  // -------------------------------------------------------------
   it('Testando função createSaleController FAIL Response', async function () {
   // const allBody = request.body;
     request.body = mock.reqBodyResolves;
@@ -85,5 +88,34 @@ describe('CONTROLLERS', function () {
 
     expect(response.status).to.have.been.calledWith(404);
     expect(response.json).to.have.been.calledWithExactly({ message: 'Product not found' });
+  });
+  // -------------------------------------------------------------
+  it('Testando função findAllSales', async function () {
+    const allSales = mock.allSales;
+    sinon.stub(services, 'findAllSales').resolves(allSales);
+
+    await controllers.findAllSales(request, response);
+
+     expect(response.status).to.have.been.calledWith(200);
+    expect(response.json).to.have.been.calledWithExactly(allSales);
+  });
+  // -------------------------------------------------------------
+  it('Testando função findByIDSales', async function () {
+    const sale = mock.oneSale;
+    sinon.stub(services, 'findByIDSales').resolves(sale);
+
+    await controllers.findByIDSales(request, response);
+
+     expect(response.status).to.have.been.calledWith(200);
+    expect(response.json).to.have.been.calledWithExactly(sale);
+  });
+  // -------------------------------------------------------------
+  it('Testando função findByIDSales FAIL Response', async function () {
+    sinon.stub(services, 'findByIDSales').resolves([]);
+
+    await controllers.findByIDSales(request, response);
+
+     expect(response.status).to.have.been.calledWith(404);
+    expect(response.json).to.have.been.calledWithExactly({ message: 'Sale not found' });
   });
 });

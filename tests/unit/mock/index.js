@@ -5,7 +5,9 @@ const {
   twoIten,
   reqBody,
   requestModel,
-  reqBodyResolves
+  reqBodyResolves,
+  allSales,
+  oneSale,
 } = require('./mock');
 
 module.exports = {
@@ -15,5 +17,7 @@ module.exports = {
   twoIten,
   reqBody,
   requestModel,
-  reqBodyResolves
+  reqBodyResolves,
+  allSales,
+  oneSale,
 };

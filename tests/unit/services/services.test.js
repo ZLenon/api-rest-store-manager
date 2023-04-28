@@ -51,6 +51,7 @@ describe('SERVIÇES', function () {
     
     expect(newProduct).to.deep.equal(mock.reqBodyResolves);
   });
+  // -------------------------------------------------------------
   it('Testando função createSaleService FAIL Response', async function () {
     sinon.stub(models, 'findByIDModel').resolves(undefined);
 
@@ -58,4 +59,23 @@ describe('SERVIÇES', function () {
 
     expect(newProduct).to.deep.equal({ status: 404, message: 'Product not found' });
   });
+  // -------------------------------------------------------------
+  it('Testando função findAllSales', async function () {
+    const allSales = mock.allSales; 
+    sinon.stub(models, 'findAllSales').resolves(allSales);
+        
+    const sales = await services.findAllSales();
+    
+    expect(sales).to.be.equal(allSales);
+  });
+  // -------------------------------------------------------------
+  it('Testando função findIDSales', async function () {
+    const oneSale = mock.oneSale; 
+    sinon.stub(models, 'findIDSales').resolves(oneSale);
+        
+    const sale = await services.findByIDSales(2);
+    
+    expect(sale).to.be.equal(oneSale);
+  });
+
 });

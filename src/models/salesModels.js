@@ -17,7 +17,39 @@ const insertSaleModel = async (idSale, idProduct, qtd) => {
   await connection.execute(SQL, [idSale, idProduct, qtd]);
 };
 
+const findAllSales = async () => {
+  const SQL = `
+  SELECT
+    sp.sale_id AS saleId,
+    sp.product_id AS productId,
+    sp.quantity AS quantity,
+    s.date AS date
+  FROM
+    sales_products AS sp
+    INNER JOIN sales AS s ON sp.sale_id = s.id;
+  `;
+  const [saleId] = await connection.execute(SQL);
+  return saleId;
+};
+
+const findIDSales = async (id) => {
+  const SQL = `
+  SELECT
+    sp.product_id AS productId,
+    sp.quantity AS quantity,
+    s.date AS date
+  FROM
+    sales_products AS sp
+    INNER JOIN sales AS s ON sp.sale_id = s.id
+    WHERE sale_id = ?;
+  `;
+  const [sale] = await connection.execute(SQL, [id]); 
+  return sale;
+};
+
 module.exports = {
   createSaleModel,
   insertSaleModel,
+  findAllSales,
+  findIDSales,
 };

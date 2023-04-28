@@ -7,6 +7,8 @@ const {
 const { 
   createSaleModel,
   insertSaleModel,
+  findAllSales,
+  findIDSales,
 } = require('./salesModels');
 
 module.exports = {
@@ -15,4 +17,6 @@ module.exports = {
   createProductModel,
   createSaleModel,
   insertSaleModel,
+  findAllSales,
+  findIDSales,
 };

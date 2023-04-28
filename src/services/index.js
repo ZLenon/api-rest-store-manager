@@ -6,6 +6,8 @@ const {
 
 const {
   createSaleService,
+  findAllSales,
+  findByIDSales,
 } = require('./salesServices');
 
 module.exports = {
@@ -13,4 +15,6 @@ module.exports = {
   findByIDService,
   createProductService,
   createSaleService,
+  findAllSales,
+  findByIDSales,
 };

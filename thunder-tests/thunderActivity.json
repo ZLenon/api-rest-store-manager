@@ -108,5 +108,55 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "6f41d6ad-0aad-42e3-9ebc-57f5a8505f2a",
+    "colId": "history",
+    "containerId": "",
+    "name": "Sales All",
+    "url": "localhost:3001/sales",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-04-26T18:21:41.251Z",
+    "modified": "2023-04-27T21:00:09.647Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "248521a8-2be8-494d-a560-aa0eafb63604",
+    "colId": "history",
+    "containerId": "",
+    "name": "Sales/:ID",
+    "url": "localhost:3001/sales/3",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-04-26T18:21:41.251Z",
+    "modified": "2023-04-28T00:21:14.492Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "tests": []
   }
 ]

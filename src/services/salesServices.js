@@ -1,5 +1,6 @@
 const models = require('../models');
 
+// requisito 6
 const createSaleService = async (productSales) => {
   const products = await Promise.all(
     // percorrendo o productSales que é um array com produtos vendidos
@@ -22,6 +23,17 @@ const createSaleService = async (productSales) => {
   return { id: idSale, itemsSold: productSales };
 };
 
+// Requisito 8
+const findAllSales = async () => {
+  const sales = await models.findAllSales();
+  return sales;
+};
+const findByIDSales = async (id) => {
+  const sale = await models.findIDSales(id);  
+  return sale;
+};
 module.exports = {
   createSaleService,
+  findAllSales,
+  findByIDSales,
 };

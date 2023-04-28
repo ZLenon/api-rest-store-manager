@@ -6,6 +6,8 @@ const {
 
 const {
   createSaleController,
+  findAllSales,
+  findByIDSales,
 } = require('./salesControllers');
 
 module.exports = {
@@ -13,4 +15,6 @@ module.exports = {
   findByIDControler,
   createProductControler,
   createSaleController,
+  findAllSales,
+  findByIDSales,
 };

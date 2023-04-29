@@ -18,8 +18,29 @@ const createProductService = async (product) => {
   return objProduct;
 };
 
+const pachProduct = async (id, name) => {
+  const product = await models.findByIDModel(id);
+  if (!product) {
+    return { message: 'Product not found' };
+  }
+  await models.pachProduct(id, name);
+  const patchProduct = await models.findByIDModel(id);
+
+  return patchProduct;
+};
+
+const deleteProduct = async (id) => {
+  const product = await models.findByIDModel(id);
+  if (!product) {
+    return { message: 'Product not found' };
+  } 
+  await models.deleteProduct(id);
+};
+
 module.exports = {
   findAllService,
   findByIDService,
   createProductService,
+  pachProduct,
+  deleteProduct,
 };

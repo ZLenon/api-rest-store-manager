@@ -16,7 +16,8 @@ const findAllSales = async (_request, response) => {
 };
 const findByIDSales = async (request, response) => {
   const { id } = request.params;
-  const sales = await services.findByIDSales(+id);
+  Number(id);
+  const sales = await services.findByIDSales(id);
   if (sales.length === 0) {
   return response.status(404).json({ message: 'Sale not found' });    
   }

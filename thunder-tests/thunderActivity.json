@@ -3,7 +3,7 @@
     "_id": "e90ad3ec-6412-4065-b6d1-76f628ba52b6",
     "colId": "history",
     "containerId": "",
-    "name": "products All",
+    "name": "Busca todos Produtos",
     "url": "localhost:3001/products",
     "method": "GET",
     "sortNum": 0,
@@ -28,12 +28,12 @@
     "_id": "e80443e3-9fc0-45f6-98c8-64925cbc2f71",
     "colId": "history",
     "containerId": "",
-    "name": "products/:ID",
+    "name": "Busca Produto por ID",
     "url": "localhost:3001/products/1",
     "method": "GET",
     "sortNum": 0,
     "created": "2023-04-26T18:21:41.251Z",
-    "modified": "2023-04-26T18:43:35.287Z",
+    "modified": "2023-04-29T17:04:44.964Z",
     "headers": [
       {
         "name": "Accept",
@@ -53,12 +53,12 @@
     "_id": "ca7d8a0b-89e9-4442-b494-ed3f095e307e",
     "colId": "history",
     "containerId": "",
-    "name": "products Cadastro",
+    "name": "Cadastra Produto",
     "url": "localhost:3001/products",
     "method": "POST",
     "sortNum": 0,
     "created": "2023-04-26T18:21:41.251Z",
-    "modified": "2023-04-26T19:58:31.340Z",
+    "modified": "2023-04-29T18:03:20.788Z",
     "headers": [
       {
         "name": "Accept",
@@ -74,7 +74,7 @@
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"Oculos de raio x\"\n}",
+      "raw": "{\n  \"name\": \"Testando 9\"\n}",
       "form": []
     },
     "tests": []
@@ -83,7 +83,7 @@
     "_id": "f83f9d25-1054-4e43-9e0c-66229c688e10",
     "colId": "history",
     "containerId": "",
-    "name": "Sales Cadastro ",
+    "name": "Cadastra venda",
     "url": "localhost:3001/sales",
     "method": "POST",
     "sortNum": 0,
@@ -113,7 +113,7 @@
     "_id": "6f41d6ad-0aad-42e3-9ebc-57f5a8505f2a",
     "colId": "history",
     "containerId": "",
-    "name": "Sales All",
+    "name": "Busca todas Vendas",
     "url": "localhost:3001/sales",
     "method": "GET",
     "sortNum": 0,
@@ -138,12 +138,67 @@
     "_id": "248521a8-2be8-494d-a560-aa0eafb63604",
     "colId": "history",
     "containerId": "",
-    "name": "Sales/:ID",
+    "name": "Busca venda por ID",
     "url": "localhost:3001/sales/2",
     "method": "GET",
     "sortNum": 0,
     "created": "2023-04-26T18:21:41.251Z",
     "modified": "2023-04-28T00:26:18.194Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "7aa95b64-1613-430a-a7c6-c8330b529777",
+    "colId": "history",
+    "containerId": "",
+    "name": "Atualiza Produto",
+    "url": "localhost:3001/products/3",
+    "method": "PATCH",
+    "sortNum": 0,
+    "created": "2023-04-26T18:21:41.251Z",
+    "modified": "2023-04-29T18:19:27.482Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"Martelo de Thor\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "c3650d90-d15f-49ed-be11-eb600a5c883c",
+    "colId": "history",
+    "containerId": "",
+    "name": "Deleta Produto",
+    "url": "localhost:3001/products/12",
+    "method": "DELETE",
+    "sortNum": 0,
+    "created": "2023-04-26T18:21:41.251Z",
+    "modified": "2023-04-29T18:03:44.826Z",
     "headers": [
       {
         "name": "Accept",

@@ -23,8 +23,26 @@ const createProductModel = async (newProduct) => {
   return insertId;
 };
 
+const pachProduct = async (id, name) => {
+  const SQL = `
+  UPDATE StoreManager.products
+  SET name = ?
+  WHERE id = ?;
+  `;
+  await connection.execute(SQL, [name, id]); 
+};
+
+const deleteProduct = async (id) => {
+  const SQL = `
+  DELETE FROM StoreManager.products
+  WHERE id = ?;
+  `;
+  await connection.execute(SQL, [id]);
+};
 module.exports = {
   findAllModel,
   findByIDModel,
   createProductModel,
+  pachProduct,
+  deleteProduct,
 };

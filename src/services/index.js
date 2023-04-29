@@ -2,6 +2,8 @@ const {
   findAllService,
   findByIDService,
   createProductService,
+  pachProduct,
+  deleteProduct,
 } = require('./productsServices');
 
 const {
@@ -17,4 +19,6 @@ module.exports = {
   createSaleService,
   findAllSales,
   findByIDSales,
+  pachProduct,
+  deleteProduct,
 };

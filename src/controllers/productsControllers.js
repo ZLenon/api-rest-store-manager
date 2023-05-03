@@ -27,7 +27,7 @@ const pachProduct = async (request, response) => {
   Number(id);
   const { name } = request.body;
   const product = await services.pachProduct(id, name);
-  if (product) {
+  if (product.message) {
     return response.status(404).json(product);
   }
   return response.status(200).json(product);

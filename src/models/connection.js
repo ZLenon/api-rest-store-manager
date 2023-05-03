@@ -1,10 +1,16 @@
 const mysql = require('mysql2/promise');
 
+/* const connection = mysql.createPool({
+  host: process.env.MYSQL_HOST,
+  user: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
+  port: process.env.MYSQL_PORT,
+  database: process.env.MYSQL_DATABASE || 'StoreManager',
+}); */
 const connection = mysql.createPool({
-  host: process.env.MYSQL_HOST || 'root',
-  user: process.env.MYSQL_USER || 'root',
-  password: process.env.MYSQL_PASSWORD || 'password',
-  port: process.env.MYSQL_PORT || 3306,
+  host: process.env.MYSQL_HOST,
+  user: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
   database: process.env.MYSQL_DATABASE || 'StoreManager',
 });
 

@@ -7,7 +7,7 @@ const midware = require('../middlewares');
 router.get('/', controllers.findAllControler);
 router.get('/:id', controllers.findByIDControler);
 router.post('/', midware.validName, controllers.createProductControler);
-router.patch('/:id', midware.validName, controllers.pachProduct);
+router.put('/:id', midware.validName, controllers.pachProduct);
 router.delete('/:id', controllers.deleteProduct);
 
 module.exports = router;

@@ -165,10 +165,10 @@
     "containerId": "",
     "name": "Atualiza Produto",
     "url": "localhost:3001/products/3",
-    "method": "PATCH",
+    "method": "PUT",
     "sortNum": 0,
     "created": "2023-04-26T18:21:41.251Z",
-    "modified": "2023-04-29T18:19:27.482Z",
+    "modified": "2023-05-02T22:21:58.970Z",
     "headers": [
       {
         "name": "Accept",
@@ -184,7 +184,7 @@
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"Martelo de Thor\"\n}",
+      "raw": "{\n  \"name\": \"Martelo do test\"\n}",
       "form": []
     },
     "tests": []
